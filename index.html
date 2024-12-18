@@ -13,15 +13,24 @@
             background: linear-gradient(to bottom right, #f0f8ff, #e6e6fa);
             font-family: 'Roboto', sans-serif;
         }
-        .card {
-            border: 1px solid #ccc;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .card img {
-            border-radius: 0.25rem;
+        .navbar-brand {
+            font-size: 1.8rem; /* Tamanho da fonte da navbar */
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
         h1 {
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            font-size: 3rem; /* Tamanho do título */
+            color: #003366; /* Cor do texto em azul escuro */
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo semitransparente */
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra do título */
+            transition: transform 0.3s; /* Transição suave */
+        }
+        h1:hover {
+            transform: scale(1.05); /* Efeito de hover */
         }
         .footer {
             background-color: #343a40;
@@ -82,7 +91,7 @@
 
     <!-- Conteúdo -->
     <div class="container mt-5">
-        <h1 class="text-center" data-aos="fade-up">Cotiacara 2.0</h1>
+        <h1 data-aos="fade-up">Cotiacara 2.0</h1>
         <p class="text-center" data-aos="fade-up">Contador oficial e imagens sensacionais da nossa Cotiacara</p>
 
         <!-- Contador -->
