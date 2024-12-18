@@ -61,13 +61,14 @@
         .contador {
             background-image: url('images/cotiacara3.jpg');
             background-size: cover;
-            padding: 20px;
+            padding: 10px; /* Reduzir padding */
             border-radius: 10px;
             color: rgba(255, 255, 255, 0.933);
             display: flex;
+            flex-direction: row; /* Alterar para row em telas grandes */
             justify-content: center;
             align-items: center;
-            font-size: 2rem;
+            font-size: 2rem; /* Tamanho da fonte padrão */
             position: relative;
             z-index: 1;
         }
@@ -77,6 +78,18 @@
         .contador .segundos {
             color: #ff5733; 
             font-weight: bold;
+        }
+
+        /* Media Query para dispositivos móveis */
+        @media (max-width: 768px) {
+            .contador {
+                flex-direction: column; /* Empilhar verticalmente */
+                font-size: 1.5rem; /* Reduzir tamanho da fonte em dispositivos móveis */
+                padding: 5px; /* Ajustar padding para dispositivos móveis */
+            }
+            .contador span {
+                margin: 5px 0; /* Margem menor entre os spans */
+            }
         }
     </style>
 </head>
@@ -104,8 +117,8 @@
         <!-- Parallax Section -->
         <div class="parallax">
             <div class="overlay">
-                <h2 class="text-white">Venha se divertir conosco!</h2>
-                <p class="text-white">Junte-se à Cotiacara para um evento inesquecível!</p>
+                <h2 class="text-blue">Venha se divertir conosco!</h2>
+                <p class="text-blue">Junte-se à Cotiacara para um evento inesquecível!</p>
             </div>
         </div>
 
@@ -186,16 +199,4 @@
                     const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
                     document.querySelector('#contador .dias').textContent = dias;
-                    document.querySelector('#contador .horas').textContent = horas;
-                    document.querySelector('#contador .minutos').textContent = minutos;
-                    document.querySelector('#contador .segundos').textContent = segundos;
-                } else {
-                    document.getElementById('contador').textContent = "Chegou!";
-                }
-            }
-            setInterval(atualizarContador, 1000);
-            atualizarContador();
-        });
-    </script>
-</body>
-</html>
+                    document.querySelector('#contador .horas').text
