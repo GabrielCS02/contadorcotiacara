@@ -50,6 +50,26 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+        .contador {
+            background-image: url('images/cotiacara3.png');
+            background-size: cover;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .contador span {
+            margin: 0 10px;
+        }
+        .contador .segundos {
+            color: #ff5733; /* Cor chamativa para os segundos */
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -66,9 +86,13 @@
         <p class="text-center" data-aos="fade-up">Contador oficial e imagens sensacionais da nossa Cotiacara</p>
 
         <!-- Contador -->
-        <div class="text-center bg-light p-4 rounded" data-aos="zoom-in">
-            <h2>Contagem Regressiva</h2>
-            <p class="contador" id="contador"></p>
+        <div class="text-center" data-aos="zoom-in">
+            <div class="contador" id="contador">
+                <span class="dias"></span> dias,
+                <span class="horas"></span> horas,
+                <span class="minutos"></span> minutos,
+                <span class="segundos"></span> segundos
+            </div>
             <a href="#" class="button">Saiba Mais</a>
         </div>
 
@@ -119,8 +143,10 @@
                     const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
                     const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
-                    document.getElementById('contador').textContent = 
-                        `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+                    document.querySelector('#contador .dias').textContent = dias;
+                    document.querySelector('#contador .horas').textContent = horas;
+                    document.querySelector('#contador .minutos').textContent = minutos;
+                    document.querySelector('#contador .segundos').textContent = segundos;
                 } else {
                     document.getElementById('contador').textContent = "Chegou!";
                 }
