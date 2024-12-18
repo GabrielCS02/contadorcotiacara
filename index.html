@@ -51,7 +51,7 @@
             background-color: #0056b3;
         }
         .parallax {
-            background-image: url('images/cotiacara3.jpg');
+            background-image: url('images/background.jpg');
             height: 400px;
             background-attachment: fixed;
             background-position: center;
@@ -61,34 +61,31 @@
         .contador {
             background-image: url('images/cotiacara3.jpg');
             background-size: cover;
-            padding: 10px; /* Reduzir padding */
+            padding: 20px;
             border-radius: 10px;
             color: rgba(255, 255, 255, 0.933);
             display: flex;
-            flex-direction: row; /* Alterar para row em telas grandes */
+            flex-direction: column; /* Flex direction para mobile */
             justify-content: center;
             align-items: center;
-            font-size: 2rem; /* Tamanho da fonte padrão */
+            font-size: 1.5rem; /* Tamanho padrão do texto do contador */
             position: relative;
             z-index: 1;
         }
         .contador span {
-            margin: 0 10px;
+            margin: 5px 0; /* Margem para espaçar os elementos no contador */
         }
         .contador .segundos {
             color: #ff5733; 
             font-weight: bold;
         }
-
-        /* Media Query para dispositivos móveis */
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
             .contador {
-                flex-direction: column; /* Empilhar verticalmente */
-                font-size: 1.5rem; /* Reduzir tamanho da fonte em dispositivos móveis */
-                padding: 5px; /* Ajustar padding para dispositivos móveis */
+                flex-direction: row; /* Alinha horizontalmente no desktop */
+                font-size: 2rem; /* Aumenta o tamanho do texto no desktop */
             }
             .contador span {
-                margin: 5px 0; /* Margem menor entre os spans */
+                margin: 0 10px; /* Espaçamento horizontal no desktop */
             }
         }
     </style>
@@ -199,4 +196,17 @@
                     const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
                     document.querySelector('#contador .dias').textContent = dias;
-                    document.querySelector('#contador .horas').text
+                    document.querySelector('#contador .horas').textContent = horas;
+                    document.querySelector('#contador .minutos').textContent
+                    document.querySelector('#contador .minutos').textContent = minutos;
+                    document.querySelector('#contador .segundos').textContent = segundos;
+                } else {
+                    document.getElementById('contador').textContent = "Chegou!";
+                }
+            }
+            setInterval(atualizarContador, 1000);
+            atualizarContador();
+        });
+    </script>
+</body>
+</html>
