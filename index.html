@@ -74,6 +74,7 @@
         }
         .contador span {
             margin: 5px 0; /* Margem para espaçar os elementos no contador */
+            white-space: nowrap; /* Impede quebras de linha */
         }
         .contador .segundos {
             color: #ff5733; 
@@ -85,7 +86,7 @@
                 font-size: 2rem; /* Aumenta o tamanho do texto no desktop */
             }
             .contador span {
-                margin: 0 10px; /* Espaçamento horizontal no desktop */
+                margin: 0 5px; /* Espaçamento horizontal no desktop */
             }
         }
     </style>
@@ -110,15 +111,7 @@
                 <span class="segundos"></span> segundos
             </div>
         </div>
-
-        <!-- Parallax Section -->
-        <div class="parallax">
-            <div class="overlay">
-                <h2 class="text-blue">Venha se divertir conosco!</h2>
-                <p class="text-blue">Junte-se à Cotiacara para um evento inesquecível!</p>
-            </div>
-        </div>
-
+        
         <!-- Imagens -->
         <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
             <div class="col">
