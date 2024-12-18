@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Dias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        .contador {
+            font-size: 2em;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contagem Regressiva</h1>
+    <p>Faltam <span class="contador" id="dias"></span> dias para 2 de janeiro!</p>
+    <script>
+        function atualizarContador() {
+            const dataAlvo = new Date('2024-01-02T00:00:00');
+            const hoje = new Date();
+            const diferenca = dataAlvo - hoje;
+            const dias = Math.ceil(diferenca / (1000 * 60 * 60 * 24));
+            document.getElementById('dias').textContent = dias > 0 ? dias : "Chegou!";
+        }
+        atualizarContador();
+        setInterval(atualizarContador, 86400000); // Atualiza diariamente
+    </script>
+</body>
+</html>
