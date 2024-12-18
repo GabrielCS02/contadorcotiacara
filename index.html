@@ -90,6 +90,52 @@
                 margin: 0 5px; /* Espaçamento horizontal no desktop */
             }
         }
+        .letras-pulando{
+            font-size: 3rem; /* Tamanho do título */
+            color: #003366; /* Cor do texto em azul escuro */
+            margin: 20px 0;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo semitransparente */
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra do título */
+            span {
+                display: inline-block;
+            animation: pular 1s infinite ease-in-out;
+            animation-delay: calc(0.1s * var(--i)); /* Atraso variável para cada letra */
+            }
+        }
+        @keyframes pular {
+            0%, 100% {
+                transform: translateY(0); /* Posição inicial */
+            }
+            50% {
+                transform: translateY(-15px); /* Salto para cima */
+            }
+        }
+
+        /* Efeito de hover */
+        .letras-pulando:hover {
+            transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+        }
+        .footer a {
+            color: #ffc107;
+        }
+
+        /* Media Queries */
+        @media (min-width: 768px) {
+            .contador {
+                flex-direction: row; /* Alinha horizontalmente no desktop */
+                font-size: 2rem; /* Aumenta o tamanho do texto no desktop */
+            }
+            .contador span {
+                margin: 0 5px; /* Espaçamento horizontal no desktop */
+            }
+        }
     </style>
 </head>
 <body>
@@ -97,7 +143,22 @@
     <!-- Conteúdo -->
     <div class="container mt-5">
         <div class="titulo-imagem" data-aos="fade-up">
-            <h1>COTIACARA 2.0</h1>
+            <!-- Frase "COTIACARA 2.0" com cada letra pulando -->
+            <h1 class="letras-pulando">
+                <span style="--i:0;">C</span>
+                <span style="--i:1;">O</span>
+                <span style="--i:2;">T</span>
+                <span style="--i:3;">I</span>
+                <span style="--i:4;">A</span>
+                <span style="--i:5;">C</span>
+                <span style="--i:6;">A</span>
+                <span style="--i:7;">R</span>
+                <span style="--i:8;">A</span>
+                <span style="--i:9;"> </span>
+                <span style="--i:10;">2</span>
+                <span style="--i:11;">.</span>
+                <span style="--i:12;">0</span>
+            </h1>
         </div>
         <!-- Contador -->
         <div class="text-center" data-aos="zoom-in">
