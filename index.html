@@ -3,35 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador de Dias</title>
+    <title>Contador de Dias e Relógio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
-        }
-        h1 {
+            background-color: #f5f5f5;
             color: #333;
         }
-        .contador {
+        h1 {
+            margin-bottom: 20px;
+        }
+        .contador, .relogio {
             font-size: 2em;
             color: #007BFF;
+            margin: 10px 0;
+        }
+        .container {
+            padding: 20px;
+            background: white;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-    <h1>Contagem Regressiva</h1>
-    <p>Faltam <span class="contador" id="dias"></span> dias para 2 de janeiro!</p>
+    <div class="container">
+        <h1>Contagem Regressiva</h1>
+        <p>Faltam <span class="contador" id="contador"></span> até 2 de janeiro às 12h!</p>
+        <h1>Relógio Atual</h1>
+        <p class="relogio" id="relogio"></p>
+    </div>
+
     <script>
+        // Função para atualizar o contador
         function atualizarContador() {
-            const dataAlvo = new Date('2024-01-02T00:00:00');
-            const hoje = new Date();
-            const diferenca = dataAlvo - hoje;
-            const dias = Math.ceil(diferenca / (1000 * 60 * 60 * 24));
-            document.getElementById('dias').textContent = dias > 0 ? dias : "Chegou!";
+            const dataAlvo = new Date('2024-01-02T12:00:00');
+            const agora = new Date();
+            const diferenca = dataAlvo - agora;
+
+            if (diferenca > 0) {
+                const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+                const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+                document.getElementById('contador').textContent = 
+                    `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+            } else {
+                document.getElementById('contador').textContent = "Chegou!";
+            }
         }
+
+        // Função para atualizar o relógio
+        function atualizarRelogio() {
+            const agora = new Date();
+            const horas = String(agora.getHours()).padStart(2, '0');
+            const minutos = String(agora.getMinutes()).padStart(2, '0');
+            const segundos = String(agora.getSeconds()).padStart(2, '0');
+            document.getElementById('relogio').textContent = `${horas}:${minutos}:${segundos}`;
+        }
+
+        // Atualização contínua
+        setInterval(atualizarContador, 1000); // Atualiza o contador a cada segundo
+        setInterval(atualizarRelogio, 1000); // Atualiza o relógio a cada segundo
+
+        // Inicialização imediata
         atualizarContador();
-        setInterval(atualizarContador, 86400000); // Atualiza diariamente
+        atualizarRelogio();
     </script>
 </body>
 </html>
