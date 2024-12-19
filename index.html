@@ -1,44 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotiacara 2.0</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!--Fonte Nandão-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"><!--Fonte Nandão-->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!--Fonte Nandão-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+
     <style>
         body {
             background: linear-gradient(to bottom right, #f0f8ff, #e6e6fa);
             font-family: 'Roboto', sans-serif;
         }
+
         .navbar-brand {
-            font-size: 1.8rem; /* Tamanho da fonte da navbar */
+            font-size: 1.8rem;
+            /* Tamanho da fonte da navbar */
             font-weight: bold;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
+
         h1 {
-            font-size: 3rem; /* Tamanho do título */
-            color: #003366; /* Cor do texto em azul escuro */
+            font-size: 3rem;
+            /* Tamanho do título */
+            color: #003366;
+            /* Cor do texto em azul escuro */
             text-align: center;
             margin: 20px 0;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Fundo semitransparente */
-            border-radius: 10px; /* Bordas arredondadas */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra do título */
-            transition: transform 0.3s; /* Transição suave */
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Fundo semitransparente */
+            border-radius: 10px;
+            /* Bordas arredondadas */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            /* Sombra do título */
+            transition: transform 0.3s;
+            /* Transição suave */
         }
+
         h1:hover {
-            transform: scale(1.05); /* Efeito de hover */
+            transform: scale(1.05);
+            /* Efeito de hover */
         }
+
         .footer {
             background-color: #343a40;
             color: white;
         }
+
         .footer a {
             color: #ffc107;
         }
+
         .button {
             background-color: #007bff;
             color: white;
@@ -48,9 +69,11 @@
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
+
         .button:hover {
             background-color: #0056b3;
         }
+
         .contador {
             background-image: url('images/cotiacara3.jpg');
             background-size: cover;
@@ -58,66 +81,95 @@
             border-radius: 10px;
             color: rgba(255, 255, 255, 0.933);
             display: flex;
-            flex-direction: row; /* Flex direction para mobile */
+            flex-direction: row;
+            /* Flex direction para mobile */
             justify-content: center;
             align-items: center;
-            font-size: 1rem; /* Tamanho padrão do texto do contador */
+            font-size: 1rem;
+            /* Tamanho padrão do texto do contador */
             position: relative;
             z-index: 1;
         }
+
         .contador span {
-            margin: 5px 0; /* Margem para espaçar os elementos no contador */
-            white-space: nowrap; /* Impede quebras de linha */
+            margin: 5px 0;
+            /* Margem para espaçar os elementos no contador */
+            white-space: nowrap;
+            /* Impede quebras de linha */
         }
+
         .contador .segundos {
-            color: #ff5733; 
+            color: #ff5733;
             font-weight: bold;
         }
+
         .titulo-imagem {
-            background-image: url('images/niko_quadrado.jpg'); /* Substitua pelo caminho da sua imagem */
-            background-size: cover; /* Faz a imagem cobrir todo o container */
-            background-position: center; /* Centraliza a imagem */
-            padding: 20px; /* Adiciona espaçamento interno */
-            border-radius: 10px; /* Adiciona bordas arredondadas */
-            color: white; /* Define a cor do texto */
+            background-image: url('images/niko_quadrado.jpg');
+            /* Substitua pelo caminho da sua imagem */
+            background-size: cover;
+            /* Faz a imagem cobrir todo o container */
+            background-position: center;
+            /* Centraliza a imagem */
+            padding: 20px;
+            /* Adiciona espaçamento interno */
+            border-radius: 10px;
+            /* Adiciona bordas arredondadas */
+            color: white;
+            /* Define a cor do texto */
         }
         @media (min-width: 768px) {
             .contador {
-                flex-direction: row; /* Alinha horizontalmente no desktop */
-                font-size: 2rem; /* Aumenta o tamanho do texto no desktop */
+                flex-direction: row;
+                /* Alinha horizontalmente no desktop */
+                font-size: 2rem;
+                /* Aumenta o tamanho do texto no desktop */
             }
             .contador span {
-                margin: 0 5px; /* Espaçamento horizontal no desktop */
+                margin: 0 5px;
+                /* Espaçamento horizontal no desktop */
             }
         }
-        .letras-pulando{
-            font-size: 3rem; /* Tamanho do título */
-            color: #003366; /* Cor do texto em azul escuro */
+        .img-fluid {
+            height: 517px;
+        }
+        .letras-pulando {
+            font-size: 3rem;
+            /* Tamanho do título */
+            font-family: "Chewy", serif;
+            /* Fonte do título */
+            color: #256c9f;
+            /* Cor do texto em azul escuro */
             margin: 20px 0;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Fundo semitransparente */
-            border-radius: 10px; /* Bordas arredondadas */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra do título */
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Fundo semitransparente */
+            border-radius: 10px;
+            /* Bordas arredondadas */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            /* Sombra do título */
             span {
                 display: inline-block;
-            animation: pular 1s infinite ease-in-out;
-            animation-delay: calc(0.1s * var(--i)); /* Atraso variável para cada letra */
+                animation: pular 1s infinite ease-in-out;
+                animation-delay: calc(0.1s * var(--i));
+                /* Atraso variável para cada letra */
             }
         }
         @keyframes pular {
-            0%, 100% {
-                transform: translateY(0); /* Posição inicial */
+            0%,
+            100% {
+                transform: translateY(0);
+                /* Posição inicial */
             }
             50% {
-                transform: translateY(-15px); /* Salto para cima */
+                transform: translateY(-15px);
+                /* Salto para cima */
             }
         }
-
         /* Efeito de hover */
         .letras-pulando:hover {
-            transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+            transform: scale(1.05);
+            /* Efeito de aumento ao passar o mouse */
         }
-
         .footer {
             background-color: #343a40;
             color: white;
@@ -125,24 +177,30 @@
         .footer a {
             color: #ffc107;
         }
-
         /* Media Queries */
         @media (min-width: 768px) {
             .contador {
-                flex-direction: row; /* Alinha horizontalmente no desktop */
-                font-size: 2rem; /* Aumenta o tamanho do texto no desktop */
+                flex-direction: row;
+                /* Alinha horizontalmente no desktop */
+                font-size: 2rem;
+                /* Aumenta o tamanho do texto no desktop */
             }
             .contador span {
-                margin: 0 5px; /* Espaçamento horizontal no desktop */
+                margin: 0 5px;
+                /* Espaçamento horizontal no desktop */
             }
         }
-        @media only screen and (max-width: 430px){
-            .letras-pulando{
+        @media only screen and (max-width: 430px) {
+            .letras-pulando {
                 font-size: 1.5rem;
+            }
+            .img-fluid {
+                height: 291px;
             }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Conteúdo -->
@@ -174,7 +232,7 @@
                 <span class="segundos"></span>&nbsp;segundos
             </div>
         </div>
-        
+
         <!-- Imagens -->
         <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
             <div class="col">
@@ -237,7 +295,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             AOS.init();
 
             function atualizarContador() {
@@ -265,4 +323,5 @@
         });
     </script>
 </body>
+
 </html>
